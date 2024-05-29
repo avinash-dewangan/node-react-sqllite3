@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+       
+        window.addEventListener("load", (event) => {
+           const a = new Date().getMilliseconds()
+            for (let i = 0; i < 10000; i++) {
+                const p = document.createElement("p");
+                document.body.appendChild(p);
+               
+            }
+            console.log(new Date().getMilliseconds()-a)
+            
+            const b =new Date().getMilliseconds()
+            const fragment = document.createDocumentFragment();
+            for (let i = 0; i < 10000; i++) {
+                const p = document.createElement("p");
+                fragment.appendChild(p);
+            }
+            document.body.appendChild(fragment);
+            console.log(new Date().getMilliseconds()-b)
+        }
+
+        );
+
+    </script>
+</body>
+
+</html>
